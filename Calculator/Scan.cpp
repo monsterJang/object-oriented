@@ -25,39 +25,39 @@ bool Scan::getIsExceed10()
 
 queue<string> Scan::ToStringQueue(string input)
 {
-	queue<string> q;     // q¼´Îª×îºóËùÒªreturnµÄ¶ÓÁĞ£¬ÓÃÓÚ±£´æinput±í´ïÊ½ÖĞµÄÊı×ÖºÍ·ûºÅ
-	string res = "";     // resÎªÉ¨Ãèinput±í´ïÊ½Ê±ÓÃÓÚÁÙÊ±´æ´¢µÄ×Ö·û´®
-	string strArr[N];     // strArrÎªÉ¨Ãèinput±í´ïÊ½Ê±ÓÃÓÚ´æ´¢Êı×ÖºÍ·ûºÅµÄstringÊı×é
+	queue<string> q;     // qå³ä¸ºæœ€åæ‰€è¦returnçš„é˜Ÿåˆ—ï¼Œç”¨äºä¿å­˜inputè¡¨è¾¾å¼ä¸­çš„æ•°å­—å’Œç¬¦å·
+	string res = "";     // resä¸ºæ‰«æinputè¡¨è¾¾å¼æ—¶ç”¨äºä¸´æ—¶å­˜å‚¨çš„å­—ç¬¦ä¸²
+	string strArr[N];     // strArrä¸ºæ‰«æinputè¡¨è¾¾å¼æ—¶ç”¨äºå­˜å‚¨æ•°å­—å’Œç¬¦å·çš„stringæ•°ç»„
 	int len = input.length();
-	int cnt = 0;     // ×÷ÎªstrArrµÄÏÂ±ê¼ÇÂ¼ÒÑÍê³ÉÌáÈ¡µÄÊı×ÖºÍ·ûºÅµÄ¸öÊı
+	int cnt = 0;     // ä½œä¸ºstrArrçš„ä¸‹æ ‡è®°å½•å·²å®Œæˆæå–çš„æ•°å­—å’Œç¬¦å·çš„ä¸ªæ•°
 	setIsExceed10(false);
 	for(int i = 0; i < len; i++)
 	{
 		if((input[i] >= '0' && input[i] <= '9') || input[i] == '.')
 		{
-			res += input[i];     // ÈôÊÇÊı×Ö»ò '.' ÔòÌí¼Óµ½ÁÙÊ±´æ´¢Æ÷resÀï£¬
-			if(i == len - 1)     // ÈôÒÑÍê³ÉÉ¨Ãè
+			res += input[i];     // è‹¥æ˜¯æ•°å­—æˆ– '.' åˆ™æ·»åŠ åˆ°ä¸´æ—¶å­˜å‚¨å™¨resé‡Œï¼Œ
+			if(i == len - 1)     // è‹¥å·²å®Œæˆæ‰«æ
 			{
 				strArr[cnt++] = res;
 				break;
 			}
-			continue;     // ¼ÌĞøÅĞ¶ÏÏÂÒ»ÔªËØ
+			continue;     // ç»§ç»­åˆ¤æ–­ä¸‹ä¸€å…ƒç´ 
 		}
 		else
 		{
-			if(!res.empty())     // res·Ç¿Õ±íÊ¾´ËÊ±resÖĞ»º´æ×ÅÒ»¸öÊı×Ö
+			if(!res.empty())     // reséç©ºè¡¨ç¤ºæ­¤æ—¶resä¸­ç¼“å­˜ç€ä¸€ä¸ªæ•°å­—
 			{
 				strArr[cnt++] = res;
 			}
-			res = "";     // resÖÃ¿Õ
-			strArr[cnt++] = res + input[i];     // ½«²»ÊÇÊı×Ö»ò "." µÄÔªËØ£¨¼´·ûºÅÔªËØ£©Ìí¼Óµ½strArrÖĞ
+			res = "";     // resç½®ç©º
+			strArr[cnt++] = res + input[i];     // å°†ä¸æ˜¯æ•°å­—æˆ– "." çš„å…ƒç´ ï¼ˆå³ç¬¦å·å…ƒç´ ï¼‰æ·»åŠ åˆ°strArrä¸­
 		}
 	}
-	for(int i =0; i < cnt; i++)     // ½«strArrÖĞ¸÷¸öÔªËØÌí¼Óµ½q¶ÓÁĞÖĞ
+	for(int i =0; i < cnt; i++)     // å°†strArrä¸­å„ä¸ªå…ƒç´ æ·»åŠ åˆ°qé˜Ÿåˆ—ä¸­
 	{
 		if(strArr[i].length() > 10)
 		{
-			setIsExceed10(true);     // ´æÔÚ´óÓÚ10Î»ÊıµÄÊı×Ö
+			setIsExceed10(true);     // å­˜åœ¨å¤§äº10ä½æ•°çš„æ•°å­—
 		}
 		q.push(strArr[i]);
 	}

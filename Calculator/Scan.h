@@ -13,6 +13,6 @@ public:
 	void setIsExceed10(bool _isExceed10);
 	bool getIsExceed10();
 private:
-	bool isExceed10;     // ¼ÇÂ¼ÊÇ·ñÓĞÊäÈë³¬¹ı10Î»µÄÊı
+	bool isExceed10;     // è®°å½•æ˜¯å¦æœ‰è¾“å…¥è¶…è¿‡10ä½çš„æ•°
 };
 

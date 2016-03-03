@@ -12,15 +12,15 @@ Print::~Print(void)
 
 void Print::printQueue(queue<string> q, bool isExceed10)
 {
-	if(isExceed10)     // Èô³¬¹ı10Î»ÊıµÄÊı×Ö´æÔÚÎªÕæ
+	if(isExceed10)     // è‹¥è¶…è¿‡10ä½æ•°çš„æ•°å­—å­˜åœ¨ä¸ºçœŸ
 	{
-		cout << "\nÊäÈë´íÎó£¡Ó¦ÊäÈë²»³¬¹ı10Î»µÄÊı×Ö£¡" << endl;
+		cout << "\nè¾“å…¥é”™è¯¯ï¼åº”è¾“å…¥ä¸è¶…è¿‡10ä½çš„æ•°å­—ï¼" << endl;
 		cout << "Input error !  Not exceeding 10 digits expected! " << endl;
 		return ;
 	}
 	while(q.size())
 	{
-		cout << q.front() << endl;     // ÊäÈë¶ÓÊ×ÔªËØ
-		q.pop();     // É¾³ı¶ÓÊ×ÔªËØ
+		cout << q.front() << endl;     // è¾“å…¥é˜Ÿé¦–å…ƒç´ 
+		q.pop();     // åˆ é™¤é˜Ÿé¦–å…ƒç´ 
 	}
 }

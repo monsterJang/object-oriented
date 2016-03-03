@@ -7,19 +7,19 @@ using namespace std;
 
 int main()
 {
-	// ÌáÊ¾ĞÅÏ¢
-	cout << "ÇëÊäÈëËÄÔòÔËËã±í´ïÊ½£º" << endl;
+	// æç¤ºä¿¡æ¯
+	cout << "è¯·è¾“å…¥å››åˆ™è¿ç®—è¡¨è¾¾å¼ï¼š" << endl;
 	cout << "please input the arithmetic expression:\n" << endl;
 	string input;
-	// ½ÓÊÜÓÃ»§ÊäÈë
+	// æ¥å—ç”¨æˆ·è¾“å…¥
 	cin >> input;
 	Scan *sc = new Scan();
 	Print *pr = new Print();
-	// µ÷ÓÃScanÀàµÄToStringQueueµÃµ½string¶ÓÁĞ
+	// è°ƒç”¨Scanç±»çš„ToStringQueueå¾—åˆ°stringé˜Ÿåˆ—
 	queue<string> qu = sc->ToStringQueue(input);
-	// Êä³ö¸Ã¶ÓÁĞ
+	// è¾“å‡ºè¯¥é˜Ÿåˆ—
 	pr->printQueue(qu, sc->getIsExceed10());
-	// ¶ÔÏóÏú»Ù
+	// å¯¹è±¡é”€æ¯
 	delete sc;
 	sc = NULL;
 	delete pr;
